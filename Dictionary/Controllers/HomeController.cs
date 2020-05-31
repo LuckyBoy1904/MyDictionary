@@ -32,6 +32,7 @@ namespace Dictionary.Controllers
             return lst;
         }
 
+        //View hien
         public IActionResult hien()
         {
             var lst = new List<Vocabulary>();
