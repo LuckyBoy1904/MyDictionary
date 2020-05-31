@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+    var lstWord = (List<BAL.Vocabulary>)ViewBag.tu;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>hien</title>
+</head>
+<body>
+    @foreach (var item in lstWord)
+    {
+        @if (@item.WordType == "N")
+        {
+            <p style="color:darkblue;">Danh từ</p>
+        }
+        else if (@item.WordType == "adj")
+        {
+            <p style="color:darkblue;">Tính từ</p>
+        }
+        <span>@item.Words:</span><span style="color:#ff0000" class="ml-3">@item.Spelling</span><br />
+        <span>@item.Mean</span><br />
+        <span>@item.ExSenetence</span>
+        <hr />
+    }
+    @using (Html.BeginForm("Search", "Home", FormMethod.Get))
+    {
+        @*<form action="#" class="search-form">*@
+        <input type="text" name="word" id="search" class="search-form__input" placeholder="Tìm kiếm tại đây...">
+        <button type="submit" class="search-form__submit">
+            Tìm
+        </button>
+        @*</form>*@
+    }
+</body>
+</html>
