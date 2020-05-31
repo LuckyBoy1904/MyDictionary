@@ -45,7 +45,7 @@ namespace Dictionary.Controllers
         {
             return View();
         }
-
+        //Search
         [HttpGet]
         public IActionResult Search(string word)
         {
