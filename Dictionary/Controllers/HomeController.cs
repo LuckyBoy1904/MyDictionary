@@ -41,7 +41,7 @@ namespace Dictionary.Controllers
             ViewBag.tu = lst;
             return View();
         }
-
+        // coment Detail
         public IActionResult Detail()
         {
             return View();
